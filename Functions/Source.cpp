@@ -9,6 +9,7 @@ void shiftLeft(int arr[], const int n, const int number_of_shifts);
 int Sum(int arr[], const int n);
 double Avg(int arr[], const int n);
 void sort(int arr[], int n);
+//#include "FillRand.h"
 
 void main()
 {
@@ -38,14 +39,15 @@ void main()
 	shiftLeft(brr, m, number_of_shifts);
 	Print(brr, m);
 }
-void FillRand(int arr[], const int n)
-{
+
+//void FillRand(int arr[], const int n)
+//{
 	// запоняем массив случайными числами
-	for (int i = 0; i < n; i++)
-	{
-		arr[i] = rand();
-	}
-}
+	//for (int i = 0; i < n; i++)
+	//{
+	//	arr[i] = rand();
+	//}
+//}
 void Print(int arr[], const int n)
 {
 	// вывод массива на экран
