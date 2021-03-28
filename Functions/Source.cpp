@@ -1,6 +1,43 @@
 #include<iostream>
 using namespace std;
+
 #define tab "\t"
+
+void FillRand(int arr[], const int n);
+void Print(int arr[], const int n);
+void shiftLeft(int arr[], const int n, const int number_of_shifts);
+int Sum(int arr[], const int n);
+double Avg(int arr[], const int n);
+void sort(int arr[], int n);
+
+void main()
+{
+	setlocale(LC_ALL, "");
+	cout << "Hello Functions!" << endl;
+	const int n = 5;
+	int arr[n];
+	// запон€ем массив случайными числами
+	FillRand(arr, n);
+	// вывод массива на экран
+	Print(arr, n);
+	cout << "—умма элементов массива:" << Sum(arr, n) << endl;
+	cout << "—реднее арифметическое:" << Avg(arr, n) << endl;
+
+	int number_of_shifts;
+	cout << "¬ведите количество сдвигов:"; cin >> number_of_shifts;
+	shiftLeft(arr, n, number_of_shifts);
+
+	// вывод массива на экран
+	Print(arr, n);
+	///////////////////////////////////////////////////////
+	const int m = 8;
+	int brr[m];
+	FillRand(brr, m);
+	Print(brr, m);
+	cout << "¬ведите количество сдвигов:"; cin >> number_of_shifts;
+	shiftLeft(brr, m, number_of_shifts);
+	Print(brr, m);
+}
 void FillRand(int arr[], const int n)
 {
 	// запон€ем массив случайными числами
@@ -30,38 +67,21 @@ void shiftLeft(int arr[], const int n, const int number_of_shifts)
 		arr[n - 1] = buffer;
 	}
 }
-void main()
+int Sum(int arr[], const int n)
 {
-	setlocale(LC_ALL, "");
-		cout << "Hello Functions!" << endl;
-		const int n = 5;
-		int arr[n];
-		// запон€ем массив случайными числами
-		FillRand(arr, n);
-		// вывод массива на экран
-		Print(arr, n);
-
-		int number_of_shifts;
-		cout << "¬ведите количество сдвигов:"; cin >> number_of_shifts;
-		shiftLeft(arr, n, number_of_shifts);
-
-		// вывод массива на экран
-		Print(arr, n);
-		///////////////////////////////////////////////////////
-		const int m = 8;
-		int brr[m];
-		FillRand(brr, m);
-		Print(brr, m);
-		cout << "¬ведите количество сдвигов:"; cin >> number_of_shifts;
-		/*for (int i = 0; i < number_of_shifts; i++)
-		{
-			int buffer = brr[0];
-			for (int j = 0; j < m; j++)
-			{
-				brr[j] = brr[j + 1];
-			}
-			brr[m - 1] = buffer;
-		}*/
-		shiftLeft(brr, m, number_of_shifts);
-		Print(brr, m);
+	int sum = 0;
+	for (int i = 0; i < n; i++)
+	{
+		sum += arr[i];
+	}
+	return sum;
 }
+double Avg(int arr[], const int n)
+{
+	return (double)Sum(arr, n) / n;
+
+}
+//void sort(int arr[], int n)
+//{
+	//for 
+//}
