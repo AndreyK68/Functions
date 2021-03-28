@@ -40,7 +40,7 @@ void main()
 }
 void FillRand(int arr[], const int n)
 {
-	// запоняем массив случайными числами
+	//// запоняем массив случайными числами
 	for (int i = 0; i < n; i++)
 	{
 		arr[i] = rand();
